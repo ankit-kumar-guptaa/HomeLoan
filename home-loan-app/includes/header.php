@@ -20,6 +20,30 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-container:hover {
+            background-color: rgba(240, 240, 250, 0.5);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .brand-logo {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-container:hover .brand-logo {
+            transform: scale(1.05);
+        }
+        
         .navbar-brand {
             font-weight: 800;
             font-size: 1.4rem;
@@ -29,17 +53,36 @@
             line-height: 1.2;
             transition: color 0.3s ease;
             text-decoration: none;
+            margin-left: 0;
         }
         
         .navbar-brand:hover {
             color: #3730A3 !important;
         }
         
+        .brand-text {
+            font-weight: 800;
+            font-size: 0.8rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3730A3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .brand-tagline {
+            font-size: 1.1rem;
+            color: #4B5563;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+        
         .navbar-brand span {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #F59E0B;
             font-weight: 600;
-            margin-top: -2px;
+            margin-top: 2px;
+            display: block;
         }
         
         .navbar-nav {
@@ -258,14 +301,53 @@
             body {
                 padding-top: 70px;
             }
+            
+            .brand-container {
+                gap: 10px;
+            }
+            
+            .brand-logo {
+                width: 65px;
+            }
+            
+            .brand-text {
+                font-size: 1rem;
+            }
+            
+            .brand-tagline {
+                font-size: 1rem;
+            }
+        }
+        }
+        
+        @media (max-width: 575.98px) {
+            .brand-logo {
+                width: 55px;
+            }
+            
+            .brand-text {
+                font-size: 0.9rem;
+            }
+            
+            .brand-tagline {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-brand span {
+                font-size: 0.7rem;
+            }
         }
     </style>
 
-    <div class="container">
-        <a class="navbar-brand" href="#home" onclick="scrollToTop()">
-            Elite Corporate Solutions
-            <span>Since 2010</span>
-        </a>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="brand-container">
+            <img src="../assets/logo.png" alt="logo" class="brand-logo">
+            <a class="navbar-brand" href="#home" onclick="scrollToTop()">
+                <div class="brand-text">Elite Corporate Solutions Private Limited</div>
+                <div class="brand-tagline"></div>
+                <span>Since 2010</span>
+            </a>
+        </div>
 
         <button class="navbar-toggler" type="button" id="navbarToggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger-lines">

@@ -1226,7 +1226,7 @@ function initParallax() {
 // Scroll animations with Intersection Observer
 function initAnimations() {
     // Create intersection observer
-    const observerOptions = {
+    const animationObserverOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
@@ -1246,7 +1246,7 @@ function initAnimations() {
                 observer.unobserve(element);
             }
         });
-    }, observerOptions);
+    }, animationObserverOptions);
 
     // Observe all elements with animate-on-scroll class
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
